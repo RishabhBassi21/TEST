@@ -27,11 +27,12 @@ if 'selected_replica' not in st.session_state:
     st.session_state.selected_replica = None
 
 # API Keys (in a real app, these should be secured properly)
-serper_api_key = "14b865cf1dae8d1149dea6a7d2c93f8ac0105970"
-openai_api_key = "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"
-groq_api_key = "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"
-tavus_api_key = "d57e6c687a894213aa87abad7c1c5f56"
-gemini_api_key = "AIzaSyBLzfjImenFp60acvXgKygaEDKGqKfHyKI"
+serper_api_key = st.secrets["SERPER_API_KEY"] if "SERPER_API_KEY" in st.secrets else "14b865cf1dae8d1149dea6a7d2c93f8ac0105970"
+openai_api_key = st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else "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"
+groq_api_key = st.secrets["GROQ_API_KEY"] if "GROQ_API_KEY" in st.secrets else "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"
+tavus_api_key = st.secrets["TAVUS_API_KEY"] if "TAVUS_API_KEY" in st.secrets else "d57e6c687a894213aa87abad7c1c5f56"
+gemini_api_key = st.secrets["GEMINI_API_KEY"] if "GEMINI_API_KEY" in st.secrets else "AIzaSyBLzfjImenFp60acvXgKygaEDKGqKfHyKI"
+
 
 # Set environment variables for API keys
 os.environ["SERPER_API_KEY"] = serper_api_key
